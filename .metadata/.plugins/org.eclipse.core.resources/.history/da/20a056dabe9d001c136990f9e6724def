@@ -1,8 +1,0 @@
-package com.sist.container5;
-
-import org.springframework.context.annotation.Configuration;
-// 스프링5
-@Configuration
-public class SawonConfig {
-
-}

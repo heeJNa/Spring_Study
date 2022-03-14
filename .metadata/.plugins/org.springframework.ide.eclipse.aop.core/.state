@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="FirstProject"/>
 <aop-project name="2022_03_08_ConstructorDI"/>
+<aop-project name="2022_03_14_MyBatis(XML+Annotation)"/>
+<aop-project name="2022_03_14_MyBatis(Annotation)"/>
+<aop-project name="2022_03_14_Autowired"/>
 <aop-project name="2022_03_07_SetterDI"/>
-<aop-project name="2022_03_10_Autowired"/>
+<aop-project name="2022_03_07_Container"/>
 <aop-project name="2022_03_08_SetterDI_5"/>
 <aop-project name="2022_03_10_Annotation"/>
+<aop-project name="2022_03_14_DI(5version)"/>
+<aop-project name="2022_03_14_Annotation(Service)"/>
 <aop-project name="2022_03_14_MyBatis(XML)"/>
 </aop-reference-model>

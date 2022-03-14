@@ -1,0 +1,7 @@
+package com.sist.dao;
+import java.util.*;
+import com.sist.vo.*;
+import com.sist.mapper.*;
+public class HotelDAO {
+	private HotelMapper mapper;
+}

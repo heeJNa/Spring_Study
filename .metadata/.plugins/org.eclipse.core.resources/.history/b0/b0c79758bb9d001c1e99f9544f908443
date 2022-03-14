@@ -1,0 +1,33 @@
+<!-- 클래스 등록=메뉴얼 제작 
+		3.9.12 이상 => +Space가 안된다
+		클래스는 사용자 정의 클래스만 등록하는 것이 아니고 라이브러리도 등록이 가능
+															========= MyBatis -->
+<!--
+		태그와 속성을 만든다 (XML)
+			1. 스프링에서 지원하는 태그와 속성만 사용이 가능
+			2. 대소문자를 구분한다.
+			3. 속성값을 줄때 반드시 ""
+			4. 여는태그와 닫는태그는 반드시 동일해야 한다.
+		태그의 종류
+			1. 여는태그 : <bean>
+			2. 닫는태그 : </bean>
+			3. 빈(Empty) 태그 <bean/>
+			
+		<bean> 스프링에서 관리하는 클래스 등록 (등록이 안된 경우에는 관리하지 않는다)
+		속성
+			id : 구분자 (중복 없이 사용) => 스프링에서 클래스를 찾아서 사용
+				 (필수)
+			class : 패키지명부터 클래스명까지 등록 => 메모리 할당
+			scope : 사용범위
+					singleton
+					prototype => clone(복제)
+			init-method :
+			destroy-method
+  -->
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	 
+	<bean id="sa" class="com.sist.container.Sawon"></bean>
+</beans>

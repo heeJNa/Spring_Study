@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.di2.location-mapper">
+<sql id="select">
+	SELECT title,msg,address
+		FROM seoul_location
+</sql>
+	<select id="locationListData" resultType="LocVO">
+		<include refid="select"/>
+	</select>
+	<select id="locationFindData" resultType="LocVO" parameterType="String">
+		<include refid="select"></include>
+		WHERE address LIKE '%'||#{address}||'%'
+	</select>
+</mapper>

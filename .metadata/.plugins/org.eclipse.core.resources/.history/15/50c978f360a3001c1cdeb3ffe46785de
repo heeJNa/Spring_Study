@@ -1,0 +1,5 @@
+package com.sist.mapper;
+// 메모리할당(x) => 구현 요청
+public interface LocationMapper {
+
+}

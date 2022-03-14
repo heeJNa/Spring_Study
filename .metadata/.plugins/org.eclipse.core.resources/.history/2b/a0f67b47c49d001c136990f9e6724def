@@ -1,0 +1,10 @@
+package com.sist.container1;
+
+public class MainClass {
+	public static void main(String[] args) {
+		String path=".";
+		ApplicationContext app=
+				new ApplicationContext(path);
+		Sawon sa=(Sawon)app.getBean("sa");
+	}
+}

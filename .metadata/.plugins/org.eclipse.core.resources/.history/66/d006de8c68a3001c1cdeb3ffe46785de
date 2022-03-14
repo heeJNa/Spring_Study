@@ -1,0 +1,21 @@
+package com.sist.config;
+
+import org.apache.commons.dbcp.BasicDataSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+// app.xml을 대신 사용 (XML을 최대한 제거) => 형식 (Spring-Boot)
+// Spring-Boot(서버) => VueJS, ReactJS (우대) (JSP없이 사용이 가능)
+@Configuration
+@ComponentScan(basePackages = {"com.sist.*"})
+// <context:component-scan base-package="com.sist.*"/>
+public class NatureConfig {
+	
+	// <bean id="ds>
+	@Bean("ds")
+	public BasicDataSource dataSource() {
+		BasicDataSource ds = new BasicDataSource();
+		return ds;
+	}
+}

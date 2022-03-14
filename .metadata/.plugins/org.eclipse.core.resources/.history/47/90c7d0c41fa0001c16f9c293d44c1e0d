@@ -1,0 +1,17 @@
+package com.sist.di;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+// 일반 클래스
+@Component
+public class MainClass {
+
+	@Autowired
+	private Sawon as;
+		
+	public static void main(String[] args) {
+		
+	}
+
+}

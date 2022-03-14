@@ -1,0 +1,14 @@
+package com.sist.container;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// 1. 컨테이너에 등록
+		ApplicationContext app =
+				new ClassPathXmlApplicationContext("app.xml");
+	}
+
+}

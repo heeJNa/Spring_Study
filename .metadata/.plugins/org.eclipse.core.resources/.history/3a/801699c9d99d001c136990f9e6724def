@@ -1,0 +1,28 @@
+package com.sist.di2;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+/*
+ * 		컨테이너 : 객체 생성 = 변수 초기화 = 객체 소멸(객체의 생명 주기
+ * 					1) 객체 생성: <bean id="" class="">
+ * 					2) 변수 초기화: 생성자
+ * 									<bean id="" class=""
+ * 										c:변수명="값" (c:_0="값")/>
+ * 									setter에 값을 주입
+	 * 									<bean id="" class=""
+	 * 									p:변수명="값"/>
+ * 
+ */
+public class MainClass {
+	public static void main(String[] args) {
+		ApplicationContext app=
+				new ClassPathXmlApplicationContext("app2.xml");
+		Sawon sa=(Sawon)app.getBean("sa");
+		
+		GenericXmlApplicationContext app1=
+				new GenericXmlApplicationContext("app2.xml"); //Generic은 close()가 가능 
+		Sawon sq1=(Sawon)app1.getBean("sa");
+		app1.close();	
+	}
+}

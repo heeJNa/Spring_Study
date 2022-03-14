@@ -1,0 +1,29 @@
+package com.sist.di;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+
+// 일반 클래스 => id가 없는 경우에는 자동으로 ID 배정 => mainClass
+@Component
+public class MainClass {
+
+	@Autowired
+	private Sawon sa;
+	@Autowired
+	@Qualifier("mi1")
+	private Member m;
+	public static void main(String[] args) {
+		ApplicationContext app = 
+				new ClassPathXmlApplicationContext("app.xml");
+		MainClass mc = (MainClass)app.getBean("mainClass");
+		System.out.println("이름: "+mc.sa.getName());
+		System.out.println("이름: "+mc.sa.getName());
+		System.out.println("이름: "+mc.sa.getName());
+		
+		mc.m.disply();
+	}
+
+}

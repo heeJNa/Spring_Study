@@ -1,0 +1,10 @@
+package com.sist.anno;
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+@Repository // DAO 객체 생성 요청
+public class HotelDAO {
+	@Autowired
+	private HotelMapper mapper;
+}

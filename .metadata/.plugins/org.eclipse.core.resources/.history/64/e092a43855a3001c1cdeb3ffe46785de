@@ -1,0 +1,11 @@
+package com.sist.mapper;
+import java.util.*;
+
+import org.apache.ibatis.annotations.Select;
+
+import com.sist.vo.*;
+public interface BooksMapper {
+	@Select("SELECT title,price FROM book "
+			+ "WHERE title LIKE '%'||#{title}||'%'")
+	public List<BooksVO> booksFindData(String title);
+}

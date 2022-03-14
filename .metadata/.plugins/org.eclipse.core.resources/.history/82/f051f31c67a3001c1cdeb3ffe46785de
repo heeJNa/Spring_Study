@@ -1,0 +1,33 @@
+package com.sist.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.sist.mapper.NatureMapper;
+import com.sist.vo.NatureVO;
+
+// Mapper => DAO => MainClass
+/*
+ 	스프링에서 패키지 단위로 클래스 등록
+ 	=> 메모리 할당 요청
+ 		클래스 위에 Annotation을 올려서 구분
+ 			1) Component : 일반 클래스(웹 크롤링)
+ 			2) Repository : 
+ 			3) Service
+ 			4) Controller
+ 			5) RestController
+ 			6) ControllerAdvice
+ 			-------------------
+ 	=> 메모리 할당이 없는 것
+ 		
+ */
+@Repository
+public class NatureDAO {
+	@Autowired
+	private NatureMapper mapper;
+	public List<NatureVO> natureListData(){
+		return mapper.natureListData();
+	}
+}

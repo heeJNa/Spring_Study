@@ -1,0 +1,11 @@
+package com.sist.anno;
+
+import org.springframework.stereotype.Component;
+
+@Component("mc")
+public class MainClass {
+	public static void main(String[] args) {
+		
+	}
+
+}

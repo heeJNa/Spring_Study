@@ -1,0 +1,19 @@
+package com.sist.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.sist.mapper.NatureMapper;
+import com.sist.vo.NatureVO;
+
+// Mapper => DAO => MainClass
+@Repository
+public class NatureDAO {
+	@Autowired
+	private NatureMapper mapper;
+	public List<NatureVO> natureListData(){
+		return mapper.natureListData();
+	}
+}

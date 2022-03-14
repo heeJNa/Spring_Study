@@ -1,0 +1,18 @@
+package com.sist.dao2;
+import java.util.*;
+public interface EmpMapper {
+	/*
+	 * <select id="empListData" resultType="EmpVO">
+			SELECT empno,ename,job,hiredate,sal,deptno
+			FROM emp
+		</select>
+		<!-- 상세보기 -->
+		<select id="empDetailData" resultType="EmpVO" parameterType="int">
+			SELECT empno,ename,job,hiredate,sal,deptno
+			FROM emp
+			WHERE empno=#{empno}
+		</select>
+	 * 
+	 * 
+	 */
+}

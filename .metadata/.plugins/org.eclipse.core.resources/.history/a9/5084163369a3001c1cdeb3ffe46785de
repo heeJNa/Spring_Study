@@ -1,0 +1,57 @@
+package com.sist.config;
+
+import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.ibatis.builder.MapperBuilderAssistant;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.mapper.MapperFactoryBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+// app.xml을 대신 사용 (XML을 최대한 제거) => 형식 (Spring-Boot)
+// Spring-Boot(서버) => VueJS, ReactJS (우대) (JSP없이 사용이 가능)
+@Configuration
+@ComponentScan(basePackages = {"com.sist.*"})
+// <context:component-scan base-package="com.sist.*"/>
+public class NatureConfig {
+	
+	/*
+	 	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
+			p:driverClassName="oracle.jdbc.driver.OracleDriver"
+			p:url="jdbc:oracle:thin:@oracle_high?TNS_ADMIN=./src/main/resources/Wallet_oracle"
+			p:username="admin"
+			p:password="Gmlwnsskgus!@1208"	
+		/>
+	 */
+	@Bean("ds")
+	public BasicDataSource dataSource() {
+		BasicDataSource ds = new BasicDataSource();
+		// setXxx() 값을 채운다
+		ds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		ds.setUrl("jdbc:oracle:thin:@oracle_high?TNS_ADMIN=./src/main/resources/Wallet_oracle");
+		ds.setUsername("admin");
+		ds.setPassword("Gmlwnsskgus!@1208");
+		return ds;
+	}
+	/*
+	 	<bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean"
+			p:dataSource-ref="ds"
+		/>
+	 */
+	@Bean("ssf")
+	public SqlSessionFactory sqlSessionFactory() throws Exception{
+		SqlSessionFactoryBean ssf =
+				new SqlSessionFactoryBean();
+		ssf.setDataSource(dataSource());
+		return ssf.getObject();
+	}
+	@Bean("mapper")
+	public MapperFactoryBean mapperFactoryBean() {
+		
+		MapperFactoryBean mapper =
+				new MapperFactoryBean();
+		mapper.setSqlSessionFactory(sqlSessionFactory());
+		return null;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;2022_03_14_MyBatis(XML+Annotation)&apos;&#x0A;- Original project: &apos;2022_03_14_MyBatis(XML+Annotation)&apos;&#x0A;- Original element: &apos;com.sist.mybatis.HomeController.java&apos;" description="Delete element" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.mybatis{HomeController.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1647228992970" subPackages="false" version="1.0"/>
+</session>

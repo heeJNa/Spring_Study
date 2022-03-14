@@ -1,0 +1,30 @@
+package com.sist.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+
+public class EmpDAO extends SqlSessionDaoSupport{
+	/*
+	 *  <select id="empListData" resultType="EmpVO">
+	 *  	(List<EmpVO> , EmpVO)
+			SELECT empno,ename,job,hiredate,sal,deptno
+			FROM emp
+		</select>
+		<!-- 상세보기 -->
+		<select id="empDetailData" resultType="EmpVO" parameterType="int">
+			SELECT emp,ename,job,hiredate,sal,deptno
+			FROM emp
+			WHERE empno=#{empno}
+		</select>
+	 * 
+	 */
+	public List<EmpVO> empListData(){
+		return getSqlSession().selectList("empListData");
+				
+	}
+	
+	public EmpVO empDetailData(int empno) {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.sist.mybatis;
+
+public class MainClass {
+
+}

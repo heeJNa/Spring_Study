@@ -1,0 +1,38 @@
+package com.sist.di;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ApplicationContext app=
+				new ClassPathXmlApplicationContext("app.xml");
+		// 저장된 객체를 얻어온다
+		Sawon sa=(Sawon)app.getBean("sa");
+		System.out.println("이름: "+sa.getName());
+		System.out.println("부서: "+sa.getDept());
+		System.out.println("직위: "+sa.getJob());
+		System.out.println("나이: "+sa.getAge());
+		System.out.println("연봉: "+sa.getPay());
+		
+		// 저장된 객체를 얻어온다
+		System.out.println("=== sa2 ===");
+		Sawon sa2=(Sawon)app.getBean("sa2");
+		System.out.println("이름: "+sa2.getName());
+		System.out.println("부서: "+sa2.getDept());
+		System.out.println("직위: "+sa2.getJob());
+		System.out.println("나이: "+sa2.getAge());
+		System.out.println("연봉: "+sa2.getPay());
+				
+				// 저장된 객체를 얻어온다
+		Sawon sa3=(Sawon)app.getBean("sa3");
+		System.out.println("이름: "+sa3.getName());
+		System.out.println("부서: "+sa3.getDept());
+		System.out.println("직위: "+sa3.getJob());
+		System.out.println("나이: "+sa3.getAge());
+		System.out.println("연봉: "+sa3.getPay());
+	}
+
+}

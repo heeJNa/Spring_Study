@@ -1,0 +1,10 @@
+package com.sist.di;
+
+public class MemberImpl1 implements Member {
+
+	@Override
+	public void disply() {
+		System.out.println(MemberImpl2);
+	}
+
+}

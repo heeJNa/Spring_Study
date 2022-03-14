@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 
+			<bean id="sa" class="com.sist.di1.Sawon"> </bean>
+				Default 생성자
+	 -->
+	
+	<bean id="s1" class="com.sist.di1.Sawon">
+		<!-- public Sawon(String name(0), String dept(1), String loc(2)) -->
+		<constructor-arg index="0" >
+			<value>홍길동</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>개발부</value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value>서울</value>
+		</constructor-arg>
+	</bean>
+	
+	
+</beans>

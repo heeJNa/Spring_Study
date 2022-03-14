@@ -1,0 +1,9 @@
+package com.sist.di;
+
+import org.springframework.context.annotation.Configuration;
+
+// app.xml을 대신 => XML 대신 자바로 설정(5)
+@Configuration
+public class EmpConfig {
+	
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.dao.emp-mapper">
+	<!-- sql문장 제작 : PreparedStatement, ResultSet -->
+	<!-- sql, select, update, delete, insert -->
+	<select id="empListData" resultType="EmpVO">
+		SELECT empno,ename,job,hiredate,sal,deptno
+		FROM emp
+	</select>
+	<!-- 상세보기 -->
+	<select id="empDetailData" resultType="EmpVO" parameterType="int">
+		SELECT emp,ename,job,hiredate,sal,deptno
+		FROM emp
+		WHERE empno=#{empno}
+	</select>
+</mapper>

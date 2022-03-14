@@ -1,0 +1,16 @@
+package com.sist.container5;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class MainClass {
+
+		public static void main(String[] args) {
+			AnnotationConfigApplicationContext app=
+					new AnnotationConfigApplicationContext("SawonConfig.class");
+			Sawon sa=(Sawon)app.getBean("sa");
+			// Sawon sa = app.getBean("sa","Sawon.class")  자동 형변환
+			sa.setName("박문수");
+			sa.setDept("개발부");
+			sa.setLoc("서울");
+		}
+}

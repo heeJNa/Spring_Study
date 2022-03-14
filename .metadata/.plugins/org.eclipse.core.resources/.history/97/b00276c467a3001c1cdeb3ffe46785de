@@ -1,0 +1,5 @@
+package com.sist.config;
+// app.xml을 대신 사용 (XML을 최대한 제거)
+public class NatureConfig {
+
+}

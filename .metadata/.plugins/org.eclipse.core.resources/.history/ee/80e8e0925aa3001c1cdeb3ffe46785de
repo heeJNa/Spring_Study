@@ -1,0 +1,11 @@
+package com.sist.dao;
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sist.vo.*;
+import com.sist.mapper.*;
+public class HotelDAO {
+	@Autowired // 자동 주입 (setter 불필요)
+	private HotelMapper mapper;
+}

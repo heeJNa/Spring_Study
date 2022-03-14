@@ -1,0 +1,11 @@
+package com.sist.di;
+
+import org.springframework.stereotype.Component;
+
+@Component("mi2")
+public class MemberImpl2 implements Member{
+
+	@Override
+	public void disply() {
+		System.out.println("MemberImpl2");
+}

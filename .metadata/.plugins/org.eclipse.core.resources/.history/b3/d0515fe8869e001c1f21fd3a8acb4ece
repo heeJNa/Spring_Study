@@ -1,0 +1,5 @@
+package com.sist.di;
+// app.xml을 대신 => XML 대신 자바로 설정(5)
+public class EmpConfig {
+
+}

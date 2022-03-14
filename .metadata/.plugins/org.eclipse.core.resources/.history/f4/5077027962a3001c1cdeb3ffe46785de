@@ -1,0 +1,12 @@
+package com.sist.anno;
+
+import org.springframework.stereotype.Component;
+
+@Component("mc")
+// 스프링에 메모리할당 요청 => 프로그램 종료시 까지 저장
+public class MainClass {
+	public static void main(String[] args) {
+		
+	}
+
+}

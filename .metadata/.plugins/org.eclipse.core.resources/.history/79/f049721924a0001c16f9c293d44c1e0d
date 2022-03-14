@@ -1,0 +1,6 @@
+package com.sist.anno;
+
+public interface HotelMapper {
+	@Select("SELECT name,address FROM seoul_hotel")
+	public List<HotelVO> hotelListData();
+}

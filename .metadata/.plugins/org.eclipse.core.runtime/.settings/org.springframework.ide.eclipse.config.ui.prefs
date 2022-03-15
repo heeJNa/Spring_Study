@@ -13,5 +13,8 @@
 //com.springsource.config.ui.prefs.activePageIndex\:/2022_03_14_MyBatis(XML)/src/main/java/app.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/2022_03_14_MyBatis(XML)/src/main/java/app2.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/2022_03_14_MyBatis(XML+Annotation)/src/main/java/app.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_15_MVC_1/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_15_MVC_2/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_15_MVC_2/src/main/webapp/WEB-INF/config/application-datasource.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/FirstProject/src/main/java/app.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 eclipse.preferences.version=1

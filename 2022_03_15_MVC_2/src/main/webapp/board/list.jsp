@@ -63,7 +63,7 @@ h1{
 					</td>
 					<td class="text-right">
 						<a href="#" class="btn btn-sm btn-danger">이전</a>
-						${curpage } page / ${totalpage } pages
+							${curpage } page / ${totalpage } pages
 						<a href="#" class="btn btn-sm btn-danger">다음</a>
 					</td>
 				</tr>

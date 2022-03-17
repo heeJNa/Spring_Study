@@ -16,5 +16,13 @@
 //com.springsource.config.ui.prefs.activePageIndex\:/2022_03_15_MVC_1/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/2022_03_15_MVC_2/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/2022_03_15_MVC_2/src/main/webapp/WEB-INF/config/application-datasource.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_16_LifeCycleProject/src/main/java/app.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_16_MVC3/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_16_MVC3/src/main/webapp/WEB-INF/config/application-datasource.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_16_MVC_3/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_16_MVC_3/src/main/webapp/WEB-INF/config/application-datasource.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_16_MVC_Include/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_17_FileUpload/src/main/webapp/WEB-INF/config/application-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/2022_03_17_FileUpload/src/main/webapp/WEB-INF/config/application-datasource.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/FirstProject/src/main/java/app.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 eclipse.preferences.version=1

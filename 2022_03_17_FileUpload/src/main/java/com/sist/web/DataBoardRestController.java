@@ -25,4 +25,23 @@ public class DataBoardRestController {
 		}
 		return result;
 	}
+	@PostMapping("databoard/delete_ok.do")
+	// javaScript, Json 등 데이터 전송 
+	public String databoard_delete_ok(String pwd, int no) {
+		String result =""; // javascript
+		String db_pwd=dao.databoardGetPassword(no);
+		if(db_pwd.equals(pwd)) {
+			dao.databoardDelete(no);
+			result="<script>"
+					+ "location.href=\"list.do\""
+					+ "</script>";
+		}else {
+			result="<script>"
+					+ "alert(\"비밀번호가 틀립니다!\");"
+					+ "history.back();"
+					+ "</script>";
+		}
+		return result;
+	}
+	// @ResponseBody => 승격 => @RestController
 }

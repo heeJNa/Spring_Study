@@ -73,6 +73,11 @@ public class DataBoardController {
 		// 오늘 날짜 전송 => new
 		String today=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 		model.addAttribute("today", today);
+		// 게시물 번호 지정
+		int count = dao.databoardRowCount();
+		count=count-((curpage-1)*rowSize);
+//		count= count-((curpage*rowSize)-rowSize);
+		model.addAttribute("count", count);
 		// 5. model에 등록된 데이터를 출력하는 JSP를 지정
 		return "databoard/list"; // 확장자를 사용하면 안된다
 		// ModelAndView => ViewResolver가 받아서 JSP를 찾은 다음 request로 변환해서 전송
@@ -216,6 +221,16 @@ public class DataBoardController {
 		model.addAttribute("len", list.size());
 		return "databoard/find";
 	}
+	// 삭제 => GET ; 버전변경 (개발자 요구) 
+	// service() => doGet(), doPost() => 유효성 검사
+	// 요청 (JSP) ==> Model ==> JSP 
+	@GetMapping("delete.do")
+	public String databoard_delete(int no,Model model) {
+		
+		model.addAttribute("no", no);
+		return "databoard/delete";
+	}
+	
 }	
 	
 	

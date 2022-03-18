@@ -57,7 +57,9 @@ public class DataBoardDAO {
 		mapper.databoardUpdate(vo);
 	}
 	// 7. 삭제하기
-	
+	public void databoardDelete(int no) {
+		mapper.databoardDelete(no);
+	}
 	// 8. 찾기 => 동적query
 	// ${}, #{} 차이점
 	// Procedure 처리 방법

@@ -12,7 +12,20 @@
 	<!-- 
 		메모리 할당되는 클래스: 반드시 어노테이션이 존재해야 한다
 	 -->
-	<mvc:annotation-driven/> <!-- RedirectAttributes 클래스 사용하기 위해 등록 -->
+	<!-- <mvc:annotation-driven/> --> <!-- RedirectAttributes 클래스 사용하기 위해 등록 -->
+	<!--  한글변환시 추가 --> 
+	<mvc:annotation-driven>
+      <mvc:message-converters>
+        <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+         <property name="supportedMediaTypes">
+           <list>
+             <value>text/html;charset=UTF-8</value>
+           </list>
+         </property>
+        </bean>
+      </mvc:message-converters>
+    </mvc:annotation-driven>
+    
 	<!-- View Resolver 설정 : JSP(경로명, 확장자 입력) -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"

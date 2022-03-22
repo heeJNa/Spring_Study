@@ -1,8 +1,0 @@
-package com.sist.dao;
-
-import org.apache.ibatis.annotations.Select;
-
-public interface BooksMapper {
-	@Select("SELECT title,price FROM book")
-	public List<BooksVO> bookListData();
-}

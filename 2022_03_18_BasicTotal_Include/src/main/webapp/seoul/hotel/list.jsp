@@ -28,7 +28,7 @@ h1{
 		<c:forEach var="vo" items="${list }">
 		<div class="col-md-3">
 		    <div class="thumbnail">
-		      <a href="#">
+		      <a href="/main/seoul/hotel/detail_before.do?no=${vo.no }">
 		        <img src="${vo.poster }" alt="Lights" style="width:230px;height: 180px;">
 		        <div class="caption">
 		          <p>${vo.name }&nbsp;<span style="color: orange">${vo.score }</span></p>
@@ -51,7 +51,20 @@ h1{
 				 	</c:if>
 				</ul>
 			</div>
-		</div>   
+		</div>
+		<h3>최신 방문 호텔</h3>
+		   <hr>
+		   <div class="row">
+		     <c:forEach var="vo" items="${cList }" varStatus="s">
+		      <c:if test="${s.index<9 }">
+			      <a href="/main/seoul/hotel/detail.do?no=${vo.no }">
+			       <img src="${vo.poster }" style="width:100px;height: 100px"
+			         title="${vo.name }"
+			       >
+			      </a>
+		      </c:if>
+		     </c:forEach>
+		   </div>   
 	</div>
 </body>
 </html>

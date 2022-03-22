@@ -1,5 +1,0 @@
-package com.sist.dao2;
-
-public interface EmpMapper {
-
-}

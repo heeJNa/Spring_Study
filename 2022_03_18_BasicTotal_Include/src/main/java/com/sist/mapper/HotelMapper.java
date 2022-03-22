@@ -15,7 +15,7 @@ public interface HotelMapper {
 	@Select("SELECT CEIL(COUNT(*)/20.0) FROM seoul_hotel")
 	public int hotelTotalPage();
 	
-	@Select("SELECT no,title,poster,score,images "
+	@Select("SELECT no,name,poster,score,images,address "
 			+ "FROM seoul_hotel "
 			+ "WHERE no=#{no}")
 	public HotelVO hotelDetailData(int no);

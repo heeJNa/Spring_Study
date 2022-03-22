@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="2022_03_08_ConstructorDI"/>
-<aop-project name="2022_03_14_MyBatis(XML+Annotation)"/>
+<aop-project name="2022_03_22_Transaction_board"/>
 <aop-project name="2022_03_16_MVC_3"/>
+<aop-project name="2022_03_14_MyBatis(XML+Annotation)"/>
 <aop-project name="2022_03_14_Autowired"/>
 <aop-project name="2022_03_16_MVC_crawling"/>
 <aop-project name="2022_03_07_SetterDI"/>
@@ -11,6 +12,7 @@
 <aop-project name="2022_03_10_Annotation"/>
 <aop-project name="2022_03_16_MVC_3_V5"/>
 <aop-project name="2022_03_15_MVC_1"/>
+<aop-project name="2022_03_21_BasicTotal"/>
 <aop-project name="2022_03_16_LifeCycleProject"/>
 <aop-project name="2022_03_17_FileUpload"/>
 <aop-project name="2022_03_14_MyBatis(Annotation)"/>

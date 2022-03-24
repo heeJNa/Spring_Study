@@ -68,16 +68,18 @@ h1{
 			<table class="table">
 				<tr>
 					<td class="text-left">
-						Search:<input type="checkbox" name="fs" value="N">이름
-						<input type="checkbox" name="fs" value="S">제목
-						<input type="checkbox" name="fs" value="C">내용
-						<input type="text" name="ss" size=15 class="input-sm">이름
-						<input type="submit" value="검색" class="btn btn-sm btn-primary">
+						<form method="post" action="find.do">
+							Search:<input type="checkbox" name="fs" value="N">이름
+							<input type="checkbox" name="fs" value="S">제목
+							<input type="checkbox" name="fs" value="C">내용
+							<input type="text" name="ss" size=15 class="input-sm">이름
+							<input type="submit" value="검색" class="btn btn-sm btn-primary">
+						</form>
 					</td>
 					<td class="text-right">
-						<a href="#" class="btn btn-sm btn-danger">이전</a>
+						<a href="list.do?page=${curpage>1?curpage-1:curpage }" class="btn btn-sm btn-danger">이전</a>
 						${curpage } page / ${totalpage } pages
-						<a href="#" class="btn btn-sm btn-success">다음</a>
+						<a href="list.do?page=${curpage<totalpage?curpage+1:curpage }" class="btn btn-sm btn-success">다음</a>
 					</td>
 				</tr>
 			</table>

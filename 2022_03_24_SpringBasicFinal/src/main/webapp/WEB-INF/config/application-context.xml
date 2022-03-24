@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	<aop:aspectj-autoproxy/> <!-- 접속자의 요청사항, 걸리는 시간 체크 -->
+	<context:component-scan base-package="com.sist.*"/>
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/"
+		p:suffix=".jsp"
+	/>
+	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+   		<property name="contentType" value="application/json;charset=UTF-8"></property>
+    </bean>
+	<mvc:annotation-driven>
+      <mvc:message-converters>
+        <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+         <property name="supportedMediaTypes">
+           <list>
+             <value>text/html;charset=UTF-8</value>
+           </list>
+         </property>
+        </bean>
+      </mvc:message-converters>
+    </mvc:annotation-driven>
+</beans>

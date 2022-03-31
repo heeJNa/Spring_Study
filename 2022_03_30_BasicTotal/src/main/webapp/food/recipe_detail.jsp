@@ -50,13 +50,13 @@
 			<table class="table">
 				<c:forTokens items="${vo.etc }" delims="," var="data">
 					<tr>
-						<td>${data }</td>
+						<td><a href="goods_list.do?data=${data}">${data }</a></td>
 					</tr>
 				</c:forTokens>
 			</table>
 			<h3>조리법</h3>
 			<table class="table">
-				<c:forEach var=ss items="${fList }" varStatus="s">
+				<c:forEach var="ss" items="${fList }" varStatus="s">
 					<tr>
 						<td width=70%>${ss }</td>
 						<td width=30%><img src="${iList[s.index] }" style="width: 250px;height: 250px"></td>

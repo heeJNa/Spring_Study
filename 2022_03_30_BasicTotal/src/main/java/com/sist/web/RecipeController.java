@@ -164,4 +164,12 @@ public class RecipeController {
 		model.addAttribute("iList",vo.getIList());
 		return "food/recipe_detail";
 	}
+	
+	@GetMapping("goods_list.do")
+	public String recipe_goods_list(String data, Model model) {
+		data=data.substring(0,data.indexOf(" "));
+		List<GoodsVO> list=dao.goodsTopData(data);
+		model.addAttribute("list", list);
+		return "food/goods_list";
+	}
 }

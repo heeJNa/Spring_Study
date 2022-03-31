@@ -45,4 +45,7 @@ public class RecipeDAO {
 	public RecipeDetailVO recipeDetailData(int no) {
 		return mapper.recipeDetailData(no);
 	}
+	public List<GoodsVO> goodsTopData(String product_name){
+		return mapper.goodsTopData(product_name);
+	}
 }

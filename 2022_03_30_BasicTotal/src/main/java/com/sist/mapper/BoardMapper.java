@@ -37,5 +37,16 @@ public interface BoardMapper {
 	// 데이터 분석(데이터마이닝 => 형태소분석) => API (꼬꼬마)
 	// 수정 : UPDATE @Select @Update
 	// 삭제 : DELETE @Select @Delete
+	@Select("SELECT pwd FROM project_freeboard "
+			+ "WHERE no=#{no}")
+	public String boardGetPassword(int no);
 	
+	@Delete("DELETE FROM project_freeboard "
+			+ "WHERE no=#{no}")
+	public void boardDelete(int no);
+	
+	@Update("UPDATE project_freeboard SET "
+			 +"name=#{name},subject=#{subject},content=#{content} "
+			 +"WHERE no=#{no}")
+	  public void boardUpdate(BoardVO vo);
 }

@@ -45,4 +45,17 @@ public class BoardController {
 		model.addAttribute("no",no);
 		return "food/board_detail";
 	}
+	
+	@GetMapping("food/board_delete.do")
+	public String food_board_delete(int no,Model model) {
+		model.addAttribute("no", no); // spring = vuejs, reactjs
+		// 스프링 : 요청처리 (@RestController), 화면 변경(@Controller)
+		// 스프링 : 요청처리 ===> Front (Router)
+		return "food/board_delete";
+	}
+	@GetMapping("food/board_update.do")
+	public String food_board_update(int no,Model model) {
+		model.addAttribute("no", no);
+		return "food/board_update";
+	}
 }

@@ -58,4 +58,39 @@ public class BoardDAO {
 		mapper.boardHitIncrement(no);
 		return mapper.boardDetailData(no);
 	}
+	public boolean boardDelete(int no, String pwd) {
+		boolean bCheck =false;
+		String db_pwd=mapper.boardGetPassword(no);
+		if(db_pwd.equals(pwd)) {
+			bCheck=true;
+			mapper.boardDelete(no);
+		}else {
+			bCheck=false;
+		}
+		return bCheck;
+	}
+	public BoardVO boardUpdateData(int no) {
+		return mapper.boardDetailData(no);
+	}
+	
+	public boolean boardUpdate(BoardVO vo){
+		boolean bCheck=false;
+		try {
+		System.out.println("boardUpdate DAO");
+		System.out.println(vo.getName());
+		   String db_pwd=mapper.boardGetPassword(vo.getNo());
+		   System.out.println("db_pwd=" +db_pwd);
+		   System.out.println("vo.pwd="+vo.getPwd());
+		   if(db_pwd.equals(vo.getPwd())){
+			   System.out.println("DAO ture");
+			   bCheck=true;
+			   mapper.boardUpdate(vo);
+		   }
+		   System.out.println("DAO bChekc"+bCheck);
+		   
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return bCheck;
+	   }
 }

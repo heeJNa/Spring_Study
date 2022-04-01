@@ -4,6 +4,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 import com.sist.vo.*;
@@ -71,5 +72,50 @@ public class BoardRestController {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	@GetMapping(value="food/board_delete_ok.do",produces = "text/plain;charset=utf-8")
+	public String board_delete(int no,String pwd) {
+		String result="";
+		boolean bCheck=dao.boardDelete(no, pwd);
+		if(bCheck==true) {
+			// 삭제 완료
+			result="YES";
+		}else {
+			// 비밀번호가 틀린 상태
+			result="NO";
+		}
+		return result;
+	}
+	@GetMapping(value="food/board_update_vue.do",produces = "text/plain;charset=utf-8")
+	public String board_update_vue(int no) {
+		String result="";
+		try {
+			BoardVO vo = dao.boardUpdateData(no);
+			JSONObject obj = new JSONObject();
+			obj.put("no",vo.getNo());
+			obj.put("subject",vo.getSubject());
+			obj.put("name",vo.getName());
+			obj.put("content",vo.getContent());
+			
+			result=obj.toJSONString();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	@GetMapping(value="food/update_ok_vue.do",produces = "text/plain;charset=utf-8")
+	public String food_update_ok_vue(BoardVO vo) {
+		System.out.println("vo.subject= "+vo.getSubject());
+		System.out.println("update_ok Method");
+		String result="";
+		   // DB 처리 
+		   boolean bCheck=dao.boardUpdate(vo);
+		   System.out.println(bCheck);
+		   if(bCheck==true){
+			   result="YES";
+		   }else{
+			   result="NO";
+		   }
+		   return result;
 	}
 }

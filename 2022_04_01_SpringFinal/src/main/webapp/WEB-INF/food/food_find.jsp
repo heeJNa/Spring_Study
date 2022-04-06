@@ -16,7 +16,11 @@ $(function(){
 		$(this).css("cursor","none")
 	})
 	$('.images').click(function(){
-		let gu=$(this).attr("data-value")
+		for(let i=1;i<=25;i++)
+		{
+			$('#gu'+i).attr("src","../images/demo/map/gu_"+i+"_off.png")
+		}
+		$(this).attr("src","../images/demo/map/gu_"+gu+"_on.png")
 		$.ajax({
 			type:'get',
 			url:'../food/food_find_result.do',

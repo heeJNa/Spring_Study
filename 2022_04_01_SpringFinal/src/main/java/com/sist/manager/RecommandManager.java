@@ -4,9 +4,11 @@ import java.util.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.net.*;
+@Component
 public class RecommandManager {
 
 	    public static void main(String[] args) {
@@ -23,7 +25,7 @@ public class RecommandManager {
 
 	        String text = null;
 	        try {
-	            text = URLEncoder.encode(fd+" 추천", "UTF-8");
+	            text = URLEncoder.encode(fd+" 서울 맛집 추천", "UTF-8");
 	        } catch (UnsupportedEncodingException e) {
 	            throw new RuntimeException("검색어 인코딩 실패",e);
 	        }
@@ -44,7 +46,7 @@ public class RecommandManager {
 	        	Elements elem=doc.select("channel > item > description");
 	        	for(int i=0;i<elem.size();i++)
 	        	{
-	        		System.out.println(elem.get(i).text());
+//	        		System.out.println(elem.get(i).text());
 	        		list.add(elem.get(i).text());
 	        	}
 	        }catch(Exception ex){}

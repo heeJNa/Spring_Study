@@ -131,4 +131,9 @@ public class RecipeController {
 		
 		return "recipe/recipe_find";
 	}
+	@GetMapping("recipe/recipe_recommand.do")
+	public String recipe_recommand() {
+		
+		return"recipe/recipe_recommand";
+	}
 }

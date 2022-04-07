@@ -28,7 +28,7 @@
 	          <ul>
 	            <li><a href="../food/list.do">맛집목록</a></li>
 	            <li><a href="../food/food_find.do">맛집찾기</a></li>
-	            <li><a href="#">맛집추천</a></li>
+	            <li><a href="../food/food_recommand.do">맛집추천</a></li>
 	          </ul>
 	        </li>
 	        <li><a class="drop" href="#">커뮤니티</a>

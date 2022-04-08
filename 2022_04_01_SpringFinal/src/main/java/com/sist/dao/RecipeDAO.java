@@ -66,4 +66,7 @@ public class RecipeDAO {
 	public RecipeVO recipeMainData(int no) {
 		return mapper.recipeMainData(no);
 	}
+	public List<RecipeVO> recipeSearchData(Map map){
+		return mapper.recipeSearchData(map);
+	}
 }

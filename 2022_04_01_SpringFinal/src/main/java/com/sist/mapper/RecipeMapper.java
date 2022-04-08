@@ -69,4 +69,31 @@ public interface RecipeMapper {
 			+ "FROM recipe "
 			+ "WHERE no=#{no}")
 	public RecipeVO recipeMainData(int no);
+	
+	@Select({"<script>"
+			+ "SELECT no,title,poster,rownum "
+			+ "FROM (SELECT no,title,poster "
+			+ "FROM recipe "
+			+ "WHERE "
+			+ "<trim prefixOverrides=\"OR\" suffix=\") \">"
+			+ "<foreach collection=\"fsArr\" item=\"fd\">"
+			+ "<trim prefix=\"OR\">"
+			+ "<choose>"
+			+ "<when test=\"fd=='T'.toString()\">"
+			+ "title LIKE '%'||#{ss}||'%'"
+			+ "</when>"
+			+ "<when test=\"fd=='S'.toString()\">"
+			+ "subject LIKE '%'||#{ss}||'%'"
+			+ "</when>"
+			+ "<when test=\"fd=='C'.toString()\">"
+			+ "chef LIKE '%'||#{ss}||'%'"
+			+ "</when>"
+			+ "</choose>"
+			+ "</trim>"
+			+ "</foreach>"
+			+ "</trim>"
+			+ "WHERE rownum &lt; 29"
+			+ "</script>"
+			})
+	public List<RecipeVO> recipeSearchData(Map map);
 }

@@ -27,10 +27,10 @@
 	          <ul class="nospace clear">
 		          <c:forEach var="vo" items="${rList }" varStatus="s">
 		          	<c:if test="${s.index%4==0 }">
-		          		<li class="one_quarter first"><a href="../recipe/detail.do?no=${vo.no }"><img src="${vo.poster }" title="${vo.title }"></a></li>
+		          		<li class="one_quarter first"><a href="../recipe/detail_before.do?no=${vo.no }"><img src="${vo.poster }" title="${vo.title }"></a></li>
 		          	</c:if>
 		          	<c:if test="${s.index%4!=0 }">
-		          		<li class="one_quarter"><a href="../recipe/detail.do?no=${vo.no }"><img src="${vo.poster }" title="${vo.title }"></a></li>
+		          		<li class="one_quarter"><a href="../recipe/detail_before.do?no=${vo.no }"><img src="${vo.poster }" title="${vo.title }"></a></li>
 		          	</c:if>
 		          </c:forEach>
 	          </ul>
@@ -57,6 +57,19 @@
 	      </nav>
 	    </div>
 	    <!-- / main body -->
+	    <h3>최근 방문 레시피</h3>
+	    <hr>
+	    <div class="row">
+	    	<c:forEach var="vo" items="${cList }" varStatus="s">
+	    		<c:if test="${s.index<6 }">
+	    			<a href="../recipe/detail.do?no=${vo.no }">
+	    				<img src="${vo.poster }" style="width: 150px;height: 150px"
+							title="${vo.title }"	    				
+	    				>
+	    			</a>
+	    		</c:if>
+	    	</c:forEach>
+	    </div>	
 	    <div class="clear"></div>
 	  </main>
 	</div>

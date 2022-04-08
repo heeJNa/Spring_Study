@@ -53,52 +53,43 @@
 	  </div>
 	</div>
 	<div class="wrapper row2">
-	  <div id="services" class="clear"> 
-	    <div class="group">
-	      <div class="one_third first">
-	        <article class="service"><i class="icon red circle fa fa-bell-o"></i>
-	          <h2 class="heading">서울 명소</h2>
-	          <p class="btmspace-10">놓칠 수 없는 서울의 명소</p>
-	          <p><a href="#">Read More &raquo;</a></p>
-	        </article>
-	      </div>
-	      <div class="one_third">
-	        <article class="service"><i class="icon orange circle fa fa-bicycle"></i>
-	          <h2 class="heading">서울 자연/관광s</h2>
-	          <p class="btmspace-10">멀리 가지 않아도 도심 속에서 느낄 수 있는 자연의 힐링</p>
-	          <p><a href="#">Read More &raquo;</a></p>
-	        </article>
-	      </div>
-	      <div class="one_third">
-	        <article class="service"><i class="icon green circle fa fa-mortar-board"></i>
-	          <h2 class="heading">서울 호텔</h2>
-	          <p class="btmspace-10">잠드는 순간에도 특별한 경험을 원하는 여행객 모두를 위한 서울의 호텔</p>
-	          <p><a href="#">Read More &raquo;</a></p>
-	        </article>
-	      </div>
-	    </div>
-	    <div class="clear"></div>
-	  </div>
-	</div>
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
+  <div id="services" class="clear"> 
+    <div class="group">
+      <div class="one_third first">
+        <article class="service"><i class="icon red circle fa fa-bell-o"></i>
+          <h2 class="heading">서울 명소</h2>
+          <p class="btmspace-10">놓칠 수 없는 서울의 명소</p>
+          <p><a href="../seoul/location.do">Read More &raquo;</a></p>
+        </article>
+      </div>
+      <div class="one_third">
+        <article class="service"><i class="icon orange circle fa fa-bicycle"></i>
+          <h2 class="heading">서울 자연/관광</h2>
+          <p class="btmspace-10">멀리 가지 않아도 도심 속에서 느낄 수 있는 자연의 힐링</p>
+          <p><a href="../seoul/nature.do">Read More &raquo;</a></p>
+        </article>
+      </div>
+      <div class="one_third">
+        <article class="service"><i class="icon green circle fa fa-mortar-board"></i>
+          <h2 class="heading">서울 호텔</h2>
+          <p class="btmspace-10">잠드는 순간에도 특별한 경험을 원하는 여행객 모두를 위한 서울의 호텔</p>
+          <p><a href="../seoul/hotel.do">Read More &raquo;</a></p>
+        </article>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
 	<div class="wrapper row6">
 	  <section id="cta" class="clear"> 
-	    <!-- ################################################################################################ -->
 	    <div class="three_quarter first">
 	      <h2 class="heading">오늘의 레시피</h2>
 	    </div>
 	    <div class="one_quarter"><a class="btn" href="../recipe/list.do">Get it now <span class="fa fa-arrow-right"></span></a></div>
-	    <!-- ################################################################################################ -->
 	  </section>
 	</div>
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
 	<div class="wrapper row2">
 	  <div class="latest"> 
-	    <!-- ################################################################################################ -->
 	    <ul class="nospace group">
 	    	<c:forEach var="vo" items="${list }">
 	    		<li>
@@ -111,46 +102,42 @@
 		      </li>
 	    	</c:forEach>
 	    </ul>
-	    <!-- ################################################################################################ -->
 	  </div>
 	</div>
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
-	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
-	  <main class="container nospace clear"> 
-	    <!-- main body -->
-	    <!-- ################################################################################################ -->
-	    <div class="group">
-	      <div class="one_half first paditout">
-	        <h2 class="heading uppercase btmspace-50">Integer varius enim id augue faucibus mattis</h2>
-	        <ul class="nospace group">
-	          <li class="btmspace-30">
-	            <article class="service largeicon"><i class="icon nobg circle fa fa-ra"></i>
-	              <h6 class="heading"><a href="#">Vestibulum nibh enim</a></h6>
-	              <p>Aenean semper elementum tellus, ut placerat leo. Quisque vehicula, urna sit amet.</p>
-	            </article>
-	          </li>
-	          <li class="btmspace-30">
-	            <article class="service largeicon"><i class="icon nobg circle fa fa-female"></i>
-	              <h6 class="heading"><a href="#">Praesent facilisis diam</a></h6>
-	              <p>Aenean semper elementum tellus, ut placerat leo. Quisque vehicula, urna sit amet.</p>
-	            </article>
-	          </li>
-	          <li>
-	            <article class="service largeicon"><i class="icon nobg circle fa fa-history"></i>
-	              <h6 class="heading"><a href="#">Proin ac augue sed nulla</a></h6>
-	              <p>Aenean semper elementum tellus, ut placerat leo. Quisque vehicula, urna sit amet.</p>
-	            </article>
-	          </li>
-	        </ul>
-	      </div>
-	      <div class="one_half"><a href="#"><img src="../images/demo/vertical.png" alt=""></a></div>
-	    </div>
-	    <!-- ################################################################################################ -->
-	    <!-- / main body -->
-	    <div class="clear"></div>
-	  </main>
-	</div>
+  <main class="container nospace clear"> 
+    <!-- main body -->
+    <div class="group">
+      <div class="one_half first paditout">
+        <h2 class="heading uppercase btmspace-50">오늘의 뮤직</h2>
+        <ul class="nospace group">
+          <li class="btmspace-30">
+            <article class="service largeicon"><i class="icon nobg circle fa fa-ra"></i>
+              <h6 class="heading"><a href="#">노래명</a></h6>
+              <p>봄여름가을겨울 (Still Life)</p>
+            </article>
+          </li>
+          <li class="btmspace-30">
+            <article class="service largeicon"><i class="icon nobg circle fa fa-female"></i>
+              <h6 class="heading"><a href="#">가수명</a></h6>
+              <p>BIGBANG (빅뱅)</p>
+            </article>
+          </li>
+          <li>
+            <article class="service largeicon"><i class="icon nobg circle fa fa-history"></i>
+              <h6 class="heading"><a href="#">앨범명</a></h6>
+              <p>봄여름가을겨울 (Still Life)</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+      <div class="one_half">
+        <iframe src="http://youtube.com/embed/eN5mG_yMDiM" width=500 height="600"></iframe>
+      </div>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
 </body>
 </html>

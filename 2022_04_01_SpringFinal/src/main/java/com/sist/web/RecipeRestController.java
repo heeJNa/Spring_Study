@@ -8,16 +8,20 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.gson.Gson;
+import com.sist.dao.GoodsDAO;
 import com.sist.dao.RecipeDAO;
+import com.sist.vo.GoodsVO;
 import com.sist.vo.RecipeVO;
 @RestController
 public class RecipeRestController {
 	@Autowired
 	private RecipeDAO dao;
+	@Autowired
+	private GoodsDAO gdao;
 	
 	@RequestMapping(value="recipe/recipe_find_vue.do",produces = "text/plain;charset=utf-8")
 	public String recipe_find(String fd,int page) {
@@ -154,6 +158,33 @@ public class RecipeRestController {
 	  		
 	  		result=arr.toJSONString();
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	@PostMapping(value="recipe/recipe_goods_data.do",produces = "text/plain;charset=utf-8")
+	public String recipe_goods_data(String fd) {
+		String result="";
+		try {
+			fd=fd.substring(0, fd.indexOf(" "));
+			int count = gdao.goodsCountData(fd);
+			List<GoodsVO> list = gdao.goodsLikeData(fd);
+			JSONArray arr = new JSONArray();
+			int i=0;
+			for(GoodsVO vo :list) {
+				JSONObject obj=new JSONObject();
+				obj.put("name",vo.getProduct_name());
+				obj.put("poster",vo.getProduct_poster());
+				obj.put("price",vo.getProduct_price());
+				if(i==0) {
+					obj.put("count",count);
+				}
+				arr.add(obj);
+				i++;
+			}
+			result=arr.toJSONString();
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;

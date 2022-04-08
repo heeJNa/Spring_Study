@@ -43,9 +43,11 @@ public interface SeoulMapper {
   public SeoulVO seoulLocationDetailData(int no);
   
   // 인근 맛집 
-  @Select("SELECT no,poster,name,type "
-		 +"FROM food_location "
-		 +"WHERE address LIKE '%'||#{address}||'%'")
+  @Select("SELECT no,poster,name,type,rownum "
+		 +"FROM (SELECT no,poster,name,type "
+		 + "FROM food_location "
+		 +"WHERE address LIKE '%'||#{address}||'%') "
+		 + "WHERE rownum <=8")
   public List<FoodVO> seoulLocationFoodHouse(String address);
   
   // 맛집에 관련된 레시피 
@@ -53,4 +55,47 @@ public interface SeoulMapper {
 		 +"FROM recipe "
 		 +"WHERE REGEXP_LIKE(title,#{type})")
   public List<RecipeVO> seoulLocationRecipe(String type);
+  
+  // 자연 상세보기
+  @Select("SELECT * FROM seoul_nature "
+			 +"WHERE no=#{no}")
+	  public SeoulVO seoulNatureDetailData(int no);
+  // 호텔 상세보기
+  @Select("SELECT * FROM seoul_hotel "
+			 +"WHERE no=#{no}")
+	  public SeoulVO seoulHotelDetailData(int no);
+  // 코스 만들기
+  // 1. 명소
+  @Select("SELECT no,title,rownum "
+  		+ "FROM (SELECT no,title "
+  		+ "FROM seoul_location "
+  		+ "WHERE address LIKE '%'||#{address}||'%' "
+  		+ "ORDER BY no ASC) "
+  		+ "WHERE rownum=1")
+  public SeoulVO seoulMyLocationData(String address);
+  // 2. 맛집
+  @Select("SELECT no,name,rownum "
+	  		+ "FROM (SELECT no,name "
+	  		+ "FROM food_location "
+	  		+ "WHERE address LIKE '%'||#{address}||'%' "
+	  		+ "ORDER BY no ASC) "
+	  		+ "WHERE rownum=1")
+	  public FoodVO seoulMyFoodData1(String address);
+  // 3. 자연
+  @Select("SELECT no,title,rownum "
+	  		+ "FROM (SELECT no,title "
+	  		+ "FROM seoul_nature "
+	  		+ "WHERE address LIKE '%'||#{address}||'%' "
+	  		+ "ORDER BY no ASC) "
+	  		+ "WHERE rownum=1")
+	  public SeoulVO seoulMyNatureData(String address);
+  // 4. 맛집 (저녁)
+  @Select("SELECT no,name,rownum "
+	  		+ "FROM (SELECT no,name "
+	  		+ "FROM food_location "
+	  		+ "WHERE address LIKE '%'||#{address}||'%' "
+	  		+ "ORDER BY no DESC) "
+	  		+ "WHERE rownum=1")
+	 public FoodVO seoulMyFoodData2(String address);
+  
 }

@@ -14,7 +14,18 @@ public class SeoulController {
   private SeoulDAO dao; 
   
   @RequestMapping("seoul/seoul_make.do")
-  public String seoul_make(){
+  public String seoul_make(String fd,Model model){
+	  if(fd==null)
+		  fd="강남";
+	  SeoulVO svo=dao.seoulMyLocationData(fd);
+	  FoodVO fvo1= dao.seoulMyFoodData1(fd);
+	  FoodVO fvo2= dao.seoulMyFoodData2(fd);
+	  SeoulVO nvo = dao.seoulMyNatureData(fd);
+	  model.addAttribute("svo", svo);
+	  model.addAttribute("nvo", nvo);
+	  model.addAttribute("fvo1", fvo1);
+	  model.addAttribute("fvo2", fvo2);
+	  model.addAttribute("fd", fd);
 	  return "seoul/seoul_make";
   }
   
@@ -129,15 +140,51 @@ public class SeoulController {
   // 요청 처리를 제어하는 클래스 => Controller
   @GetMapping("seoul/location_detail.do")
   public String seoul_location_detail(int no,Model model){
-	  String address="";
-	  String type="";
+	 
 	  SeoulVO vo=dao.seoulLocationDetailData(no);
-	  List<FoodVO> fList=dao.seoulLocationFoodHouse(address);
-	  List<RecipeVO> rList=dao.seoulLocationRecipe(type);
+	  String address=vo.getAddress();
+	  address=address.substring(address.indexOf(" "));
+	  address=address.trim();
+	  vo.setAddress(address);
+	  String addr1=address.substring(address.indexOf(" ")+1);
+	  String addr2=addr1.trim().substring(0,addr1.indexOf(" "));
+	  List<FoodVO> fList=dao.seoulLocationFoodHouse(addr2);
 	  
 	  model.addAttribute("vo", vo);
 	  model.addAttribute("fList", fList);
-	  model.addAttribute("rList", rList);
 	  return "seoul/location_detail";
+  }
+  @GetMapping("seoul/nature_detail.do")
+  public String seoul_nature_detail(int no,Model model) {
+	  
+	  SeoulVO vo=dao.seoulNatureDetailData(no);
+	  String address=vo.getAddress();
+	  address=address.substring(address.indexOf(" "));
+	  address=address.trim();
+	  vo.setAddress(address);
+	  String addr1=address.substring(address.indexOf(" ")+1);
+	  String addr2=addr1.trim().substring(0,addr1.indexOf(" "));
+	  List<FoodVO> fList=dao.seoulLocationFoodHouse(addr2);
+	  
+	  model.addAttribute("vo", vo);
+	  model.addAttribute("fList", fList);
+	  return "seoul/nature_detail";
+  }
+  @GetMapping("seoul/hotel_detail.do")
+  public String hotel_detail(int no,Model model) {
+	  
+	  SeoulVO vo=dao.seoulHotelDetailData(no);
+	  String address=vo.getAddress();
+	  address=address.substring(address.indexOf(" "));
+	  address=address.trim();
+	  vo.setAddress(address);
+	  String addr1=address.substring(address.indexOf(" ")+1);
+	  String addr2=addr1.trim().substring(0,addr1.indexOf(" "));
+	  List<FoodVO> fList=dao.seoulLocationFoodHouse(addr2);
+	  
+	  model.addAttribute("vo", vo);
+	  model.addAttribute("fList", fList);
+	  
+	  return "seoul/hotel_detail";
   }
 }

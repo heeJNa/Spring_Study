@@ -1,18 +1,33 @@
 package com.sist.web;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import java.util.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.sist.dao.RecipeDAO;
-import com.sist.vo.*;
+import com.sist.vo.ChefVO;
+import com.sist.vo.RecipeDetailVO;
+import com.sist.vo.RecipeVO;
 @Controller
 public class RecipeController {
 	@Autowired
 	private RecipeDAO dao;
 	@GetMapping("recipe/list.do")
-	public String recipe_list(String page, Model model) {
+	public String recipe_list(String page, Model model,HttpServletRequest req) {
 		//Model => request,response사용을 권장하지 않는다 => 전송객체 (Model)
 		  //사용자가 보내준 값 , 내장객체 => DispatcherServlet을 통해서 받아 온다 
 		  //매개변수를 통해서 받는다 (순서는 상관없다)
@@ -45,11 +60,35 @@ public class RecipeController {
 		model.addAttribute("startPage", startPage);
 		model.addAttribute("endPage", endPage);
 		// Cookie값 전송
+		Cookie[] cookies=req.getCookies();
+		List<RecipeDetailVO> cList=new ArrayList<>();
+		if(cookies!=null) {
+			for(int i=cookies.length-1;i>=0;i--) {
+				if(cookies[i].getName().startsWith("r")) {
+					cookies[i].setPath("/");
+					String no=cookies[i].getValue();
+					RecipeDetailVO vo=dao.recipeDetailDAta(Integer.parseInt(no));
+					cList.add(vo);
+				}
+			}
+			model.addAttribute("cList", cList);
+		}
 		return "recipe/list";
 	}
 	
 	// 조건 ==> 라이브러리 => 안에 코딩이 불가능 (컴파일된 파일만 보내준다) 
 	// 읽어 갈 수 있는 소스 코딩 => 형식 => String
+	@GetMapping("recipe/detail_before.do")
+	public String recipe_detail_before(int no,HttpServletResponse response,RedirectAttributes ra) {
+		Cookie cookie = new Cookie("r"+no,String.valueOf(no));
+		// 단점 => 문자열만 저장 가능
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24); // 기간
+		// 클라이언트로 전송
+		response.addCookie(cookie);
+		ra.addAttribute("no", no);
+		return "redirect:../recipe/detail.do";
+	}
 	@GetMapping("recipe/detail.do")
 	public String recipeDetailData(int no,Model model) {
 		RecipeDetailVO vo = dao.recipeDetailDAta(no);
@@ -136,4 +175,18 @@ public class RecipeController {
 		
 		return"recipe/recipe_recommand";
 	}
+	@RequestMapping("recipe/priceCompare.do")
+	public String recipe_priceCompare(String[] recipe, String fd,Model model) {
+		if(recipe!=null) {
+			Map map=new HashMap();
+			map.put("fsArr",recipe);
+			map.put("ss",fd);
+			List<RecipeVO> list=dao.recipeSearchData(map);
+			model.addAttribute("rList", list);
+		}
+		model.addAttribute("fd", fd);
+		model.addAttribute("option", recipe);
+		return "recipe/priceCompare";
+	}
+	
 }

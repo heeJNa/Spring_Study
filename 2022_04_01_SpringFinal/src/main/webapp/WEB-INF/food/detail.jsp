@@ -122,7 +122,7 @@
 	    <div class="sidebar one_quarter"> 
 	      <h6>맛집 위치</h6>
 	      <div>
-			  <div id="map" style="width:350px;height:550px;"></div>
+			  <div id="map" style="width:100%;height:550px;"></div>
 		
 				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=676eb5fa2637b234997b24dd7566e9ba&libraries=services"></script>
 				<script>

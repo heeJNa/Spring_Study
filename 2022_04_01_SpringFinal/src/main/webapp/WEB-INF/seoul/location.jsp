@@ -23,7 +23,6 @@
     <div class="content"> 
       <div id="gallery">
         <figure>
-          
           <ul class="nospace clear">
            <c:forEach var="vo" items="${rList }" varStatus="s">
             <c:if test="${s.index%4==0 }">
@@ -33,9 +32,7 @@
               <li class="one_quarter"><a href="../seoul/location_detail.do?no=${vo.no }"><img src="${vo.poster }" title="${vo.title }" style="width:300px;height:300px"></a></li>
             </c:if>
            </c:forEach>
-            
           </ul>
-          
         </figure>
       </div>
       <nav class="pagination">

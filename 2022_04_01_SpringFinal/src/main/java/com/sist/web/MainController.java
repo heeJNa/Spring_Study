@@ -46,4 +46,8 @@ public class MainController {
 			com[i]=su;
 		}
 	}
+	@GetMapping("chat/chat.do")
+	public String chat_chat() {
+		return"chat/chat";
+	}
 }

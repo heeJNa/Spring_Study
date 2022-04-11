@@ -75,6 +75,7 @@
 							page:this.curpage
 						}
 					}).then(res=>{
+						console.log(res)
 						this.board_list=res.data;
 						this.curpage=res.data[0].curpage;
 						this.totalpage=res.data[0].totalpage;

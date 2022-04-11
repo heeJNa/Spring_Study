@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd">
+	<!-- AOP -->
+	<!-- 사용자 정의 클래스 등록 -->
+	<context:component-scan base-package="com.sist.*"/>
+	<!-- 
+ 		 @Autowired
+ 		 =================
+ 		 @PostConstruct => init-method
+ 		 @PreDestroy => destory-method
+ 		 ================= method DI
+ 		 @Resource 
+ 		 
+ 		 DI : 주입 (필요한 객체 주소, 필요한 데이터를 주입)
+ 		 DI : 객체와 객체의 관계도(IoC)
+ 	-->
+	<!-- DataSource -->
+	<bean id="ds" 
+		class="org.apache.commons.dbcp.BasicDataSource"
+		p:driverClassName="com.mysql.cj.jdbc.Driver"
+		p:url="jdbc:mysql://localhost:3306/mydb?serverTimeZone=UTC"
+		p:username="root"
+		p:password="rlal!@1208"
+	/>
+	<!-- public class SqlSessionFactoryBean{
+			private DataSource dataSource;
+			public void setDataSource(DataSource dataSource){
+				this.dataSource=dataSource
+			}
+			public void init(){
+				드라이버 등록
+			}
+			public void getConnection(){
+				username/password
+			}
+			public void disConnection(){
+				
+			}
+		}
+		
+	 -->	
+	<!-- Transaction -->
+	<!-- MyBatis -->
+	<bean id="ssf" 
+		class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="ds"
+	/>
+	<!-- Mapper -->
+	<bean id="mapper"
+		class="org.mybatis.spring.mapper.MapperFactoryBean"
+		p:sqlSessionFactory-ref="ssf"
+		p:mapperInterface="com.sist.dao.StudentMapper"	
+	/>
+	<!-- ViewResolver -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/"
+		p:suffix=".jsp"	
+	/>
+	<!-- Tiles -->
+	<!-- MultipartResolver -->
+	<!-- Validation -->
+	<mvc:annotation-driven/>
+	<bean id="messageSource" 
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+		p:basename="/WEB-INF/message"
+	/>	
+	<!-- security -->
+	<!-- WebSocket -->
+
+</beans>

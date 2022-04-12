@@ -65,10 +65,12 @@
 </aop-project>
 <aop-project name="2022_03_14_DI(5version)"/>
 <aop-project name="2022_03_24_SpringBasicFinal"/>
+<aop-project name="2022_04_12_SpringBoot_MyBatis_Thymeleaf"/>
 <aop-project name="2022_03_16_MVC_3_V5"/>
 <aop-project name="2022_03_23_RestProject_VueJS"/>
 <aop-project name="2022_03_21_BasicTotal"/>
 <aop-project name="2022_03_17_FileUpload"/>
+<aop-project name="2022_04_12_SpringBoot_JPA"/>
 <aop-project name="2022_04_11_MySQL_MyBatis"/>
 <aop-project name="2022_03_08_SetterDI_5"/>
 <aop-project name="2022_03_24_AOP">
@@ -94,6 +96,7 @@
 <aop-reference advice-type="AROUND" bean="1:BeansModel|2:2022_03_24_Transaction_spring|3:src/main/java/app.xml|7:beans:11|8:stdDAO:11" bean-file="/2022_03_24_Transaction_spring/src/main/java/app.xml" bean-start-line="11" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/2022_03_24_Transaction_spring/src/main/java/app.xml" source="=2022_03_22_Transaction_board/\/Users\/kimheejun\/.m2\/repository\/org\/springframework\/spring-tx\/5.1.5.RELEASE\/spring-tx-5.1.5.RELEASE.jar=/maven.pomderived=/true=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/maven.pomderived=/true=/=/org.eclipse.jst.component.archivename=/spring-tx-5.1.5.RELEASE.jar=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-tx=/=/maven.version=/5.1.5.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=2022_03_24_Transaction_spring/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.dao{StdDAO.java[StdDAO~txInsert" target-start-line="36"/>
 </aspect-definition>
 </aop-project>
+<aop-project name="2022_04_12_WebFrontServer_Music"/>
 <aop-project name="2022_04_01_Chat"/>
 <aop-project name="2022_03_14_MyBatis(XML+Annotation)"/>
 <aop-project name="2022_03_16_MVC_3"/>
@@ -149,16 +152,18 @@
 <aop-reference advice-type="AROUND" bean="1:BeansModel|2:2022_04_01_SpringFinal|3:src/main/webapp/WEB-INF/config/application-context.xml|7:beans:11|8:boardRestController:11" bean-file="/2022_04_01_SpringFinal/src/main/webapp/WEB-INF/config/application-context.xml" bean-start-line="11" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/2022_04_01_SpringFinal/src/main/webapp/WEB-INF/config/application-context.xml" source="=2022_04_01_SpringFinal/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.aop{SpringFinalAspect.java[SpringFinalAspect~around~QProceedingJoinPoint;" source-start-line="29" target="=2022_04_01_SpringFinal/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.web{BoardRestController.java[BoardRestController~freeboard_update_ok~QBoardVO;" target-start-line="19"/>
 </aspect-definition>
 </aop-project>
+<aop-project name="2022_04_11_MySQL"/>
 <aop-project name="2022_03_10_Annotation"/>
+<aop-project name="2022_04_12_SpringBoot_MyBatis"/>
 <aop-project name="2022_03_24_AOP_2">
 <aspect-definition advice-class-name="com.sist.aspect.MyAspect2" advice-method-name="afterThrowing(java.lang.Throwable)" advice-type="AFTER_THROWING" aspect-end-line-number="10" aspect-name="myAspect2" aspect-start-line-number="10" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" pointcut-expression="execution(* com.sist.dao.MyDAO2.*(..))" proxy-target-class="false" throwing="ex">
 <aop-reference advice-type="AFTER_THROWING" bean="1:BeansModel|2:2022_03_24_AOP_2|3:src/main/java/app.xml|7:beans:8|8:myDAO2:8" bean-file="/2022_03_24_AOP_2/src/main/java/app.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" source="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.aspect{MyAspect2.java[MyAspect2~afterThrowing~QThrowable;" source-start-line="21" target="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.dao{MyDAO2.java[MyDAO2~display" target-start-line="7"/>
 </aspect-definition>
-<aspect-definition advice-class-name="com.sist.aspect.MyAspect" advice-method-name="afterReturning(java.lang.Object)" advice-type="AFTER_RETURNING" aspect-end-line-number="10" aspect-name="myAspect" aspect-start-line-number="10" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" pointcut-expression="execution (* com.sist.dao.MyDAO.*(..))" proxy-target-class="false" returning="obj">
-<aop-reference advice-type="AFTER_RETURNING" bean="1:BeansModel|2:2022_03_24_AOP_2|3:src/main/java/app.xml|7:beans:8|8:myDAO:8" bean-file="/2022_03_24_AOP_2/src/main/java/app.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" source="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.aspect{MyAspect.java[MyAspect~afterReturning~QObject;" source-start-line="15" target="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.dao{MyDAO.java[MyDAO~sawonNameData" target-start-line="7"/>
-</aspect-definition>
 <aspect-definition advice-class-name="com.sist.aspect.MyAspect3" advice-method-name="around(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="10" aspect-name="myAspect3" aspect-start-line-number="10" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" pointcut-expression="execution(* com.sist.dao.MyDAO3.*(..))" proxy-target-class="false">
 <aop-reference advice-type="AROUND" bean="1:BeansModel|2:2022_03_24_AOP_2|3:src/main/java/app.xml|7:beans:8|8:myDAO3:8" bean-file="/2022_03_24_AOP_2/src/main/java/app.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" source="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.aspect{MyAspect3.java[MyAspect3~around~QProceedingJoinPoint;" source-start-line="13" target="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.dao{MyDAO3.java[MyDAO3~display" target-start-line="7"/>
+</aspect-definition>
+<aspect-definition advice-class-name="com.sist.aspect.MyAspect" advice-method-name="afterReturning(java.lang.Object)" advice-type="AFTER_RETURNING" aspect-end-line-number="10" aspect-name="myAspect" aspect-start-line-number="10" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" pointcut-expression="execution (* com.sist.dao.MyDAO.*(..))" proxy-target-class="false" returning="obj">
+<aop-reference advice-type="AFTER_RETURNING" bean="1:BeansModel|2:2022_03_24_AOP_2|3:src/main/java/app.xml|7:beans:8|8:myDAO:8" bean-file="/2022_03_24_AOP_2/src/main/java/app.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/2022_03_24_AOP_2/src/main/java/app.xml" source="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.aspect{MyAspect.java[MyAspect~afterReturning~QObject;" source-start-line="15" target="=2022_03_24_AOP_2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.sist.dao{MyDAO.java[MyDAO~sawonNameData" target-start-line="7"/>
 </aspect-definition>
 </aop-project>
 <aop-project name="2022_03_25_Tiles_1"/>

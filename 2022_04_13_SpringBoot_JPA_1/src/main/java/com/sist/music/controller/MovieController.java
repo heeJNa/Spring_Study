@@ -41,6 +41,7 @@ public class MovieController {
 		model.addAttribute("totalpage", totalpage);
 		model.addAttribute("startPage", startPage);
 		model.addAttribute("endPage", endPage);
+		model.addAttribute("cno", cno);
 		model.addAttribute("main_jsp", "../movie/list.jsp");
 		return "main/main";
 	}

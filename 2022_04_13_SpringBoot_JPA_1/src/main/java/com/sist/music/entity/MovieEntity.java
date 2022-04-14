@@ -14,5 +14,5 @@ public class MovieEntity {
 	private int mno;
 	private int cno;
 	private String title,time,grade,reserve,genre,regdate,
-					director,actor,showUser,poster,story,mkey;
+					director,actor,showuser,poster,story,mkey;
 }

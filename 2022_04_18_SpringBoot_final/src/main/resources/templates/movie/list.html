@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="wrapper row2">
+	  <div id="breadcrumb" class="clear"> 
+	    <ul>
+	      <li><a href="/main">Home</a></li>
+	      <li><a href="/movie/list">상영영화</a></li>
+	      <li><a href="/movie/list?cno=2">개봉예정</a></li>
+	    </ul>
+	  </div>
+	</div>
+	<div class="wrapper row3">
+	  <main class="container clear"> 
+	    <!-- main body -->
+	    <div class="content"> 
+	      <div id="gallery">
+	          <header class="heading" th:text="${title}"></header>
+	          <ul class="nospace clear">
+	            <li th:each="vo,index:${list}" th:class="${index.index}%4==0?'one_quarter first':'one_quarter'">
+	            <a th:href="@{/movie/detail_before(mno=${vo.mno})}"><img th:src="${vo.poster}" th:title="${vo.title}" style="width: 220px;height: 340px"></a></li>
+	          </ul>
+	      </div>
+	      <nav class="pagination">
+	        <ul>
+	          <li th:each="i:${#numbers.sequence(startPage,endPage)}" th:class="${curpage==i}?'current':''"><a th:href="@{/movie/list(page=${i},cno=${cno})}" th:text="${i}"></a></li>
+	        </ul>
+	      </nav>
+	    </div>
+	    <!-- / main body -->
+	    <h1>최근 방문 목록</h1>
+		<hr>
+		<div>
+			<img th:each="vo:${cList}" th:src="${vo.poster}" th:title="${vo.title}" style="width: 100px;height: 100px">
+		</div>
+	    <div class="clear"></div>
+	  </main>
+	</div>
+</body>
+</html>

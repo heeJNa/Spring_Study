@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:fragment="headerFragment">
+	<div class="wrapper row1">
+	  <header id="header" class="clear"> 
+	    <div id="logo" class="fl_left">
+	      <h1><a href="/main">개인프로젝트</a></h1>
+	    </div>
+	    <nav id="mainav" class="fl_right">
+	      <ul class="clear">
+	        <li class="active"><a href="/main">개인프로젝트</a></li>
+	        <li><a href="../movie/list">영화</a></li>
+	        <li><a href="../board/list">게시판</a></li>
+	      </ul>
+	    </nav>
+	  </header>
+	</div>
+</th:block>	
+</body>
+</html>

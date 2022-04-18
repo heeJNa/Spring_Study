@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script>
+$( function() {
+  /* $( "#dialog" ).dialog(); */
+  $('.posters').hover(function(){
+	  $(this).css("cursor","pointer")
+  },function(){
+	  $(this).css("cursor","")
+  })
+  // 포스터 클릭시 처리
+  $('.posters').click(function(){
+	  let no = $(this).attr('data-no')
+	  $.ajax({
+		  type:'POST',
+		  url:'../music/detail',
+		  data:{
+			  "no":no
+		  },
+		  success:function(res){
+			  console.log(res)
+			  $('#music').attr("src","http://youtube.com/embed/"+res.mkey)
+			  $('#title').text(res.title)
+			  $('#singer').text(res.singer)
+			  $('#album').text(res.album)
+			  
+			  $( "#dialog" ).dialog({
+				  autoOpen:false,
+				  width:500,
+				  height:530,
+				  modal:true
+			  }).dialog("open")
+		  }
+	  })
+  })
+  
+});
+</script>
+</head>
+<body>
+	<div class="wrapper row2">
+		<div id="breadcrumb" class="clear">
+		    <ul>
+		      <li><a th:href="@{/main(cno=1)}">Top200</a></li>
+		      <li><a th:href="@{/main(cno=2)}">가요</a></li>
+		      <li><a th:href="@{/main(cno=3)}">POP</a></li>
+		      <li><a th:href="@{/main(cno=4)}">OST</a></li>
+		      <li><a th:href="@{/main(cno=5)}">트롯</a></li>
+		      <li><a th:href="@{/main(cno=6)}">JAZZ</a></li>
+		    </ul>
+		</div>
+	</div>
+	<div class="wrapper row3">
+	  <main class="container clear"> 
+	    <!-- main body -->
+	    <div class="content"> 
+	      <div id="gallery">
+	          <header class="heading" th:text="${title}"></header>
+	          <ul class="nospace clear">
+	          		<li th:each="vo,index:${list}" th:class="${index.index}%4==0?'one_quarter first':'one_quarter'" >
+	            		<a href="#">
+	            			<img th:src="${vo.poster}" th:title="${vo.title}" style="width: 210px;height: 210px" class="posters" th:data-no="${vo.no}">
+	            		</a>
+		            </li>
+	          </ul>
+	      </div>
+	      <nav class="pagination">
+	        <ul>
+	          <li th:if="${startPage}>1"><a th:href="@{/main(page=${startPage}-1,cno=${cno})}">&laquo; Previous</a></li>
+	          <li th:each="i:${#numbers.sequence(startPage,endPage)}"
+	           th:class="${i==curpage}?'current':''"
+	          ><a th:href="@{/main(page=${i},cno=${cno})}" th:text="${i}"></a></li>
+	          <li th:if="${endPage<totalpage}"><a th:href="@{/main(page=${endPage}+1,cno=${cno})}">Next &raquo;</a></li>
+	        </ul>
+	      </nav>
+	    </div>
+	    <!-- / main body -->
+	    <div id="dialog" title="동영상" style="display:none">
+		 <table class="table">
+		 	<tr>
+		 		<td colspan="2">
+		 			<iframe src="" style="width: 450px;height:300px" id="music"></iframe>
+		 		</td>
+		 	</tr>
+		 	<tr>
+		 		<td width="20%" class="text-right">곡명</td>
+		 		<td width="80%" id="title"></td>
+		 	</tr>
+		 	<tr>
+		 		<td width="20%" class="text-right">가수명</td>
+		 		<td width="80%" id="singer"></td>
+		 	</tr>
+		 	<tr>
+		 		<td width="20%" class="text-right">앨범</td>
+		 		<td width="80%" id="album"></td>
+		 	</tr>
+		 </table>
+		</div>
+	    <div class="clear"></div>
+	  </main>
+	</div>
+</body>
+</html>

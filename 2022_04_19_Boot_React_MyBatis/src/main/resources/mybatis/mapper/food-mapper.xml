@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.react.dao.FoodMapper">
+	 <!-- id명, Mapper에 있는 메소드명이 동일 -->
+	 <select id="foodCategoryData" resultType="com.sist.react.vo.CategoryVO" parameterType="hashmap">
+	 	SELECT cno,title,subject,poster
+	 	FROM food_category
+	 	WHERE cno BETWEEN #{start} AND #{end}
+	 </select>
+	 <select id="foodCategoryListData" resultType="com.sist.react.vo.FoodVO" parameterType="int">
+	 	SELECT * FROM food_house_2
+	 	WHERE cno=#{cno}	
+	 </select>
+	 <select id="foodCategoryInfoData" resultType="com.sist.react.vo.CategoryVO" parameterType="int">
+	 	SELECT * FROM food_category
+	 	WHERE cno=#{cno}
+	 </select>
+	 <!-- 상세보기 -->
+	 <select id="foodDetailData" resultType="com.sist.react.vo.FoodVO" parameterType="int">
+	 	SELECT * FROM food_house_2
+	 	WHERE no=#{no}
+	 </select>
+</mapper>
